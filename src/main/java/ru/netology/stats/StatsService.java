@@ -11,12 +11,9 @@ public class StatsService {
     }
 
     public long averageSales(long[] sales) {
-        long averageSales = 0; // средняя сумма продаж в месяц
-        long x = 0;
-        for (long sale : sales) {
-            x += sale;
-            averageSales = x / 12;
-        }
+        long sumSales = sumSales(sales);
+        long averageSales = sumSales / 12; // средняя сумма продаж в месяц
+
         return averageSales;
     }
 
@@ -40,15 +37,12 @@ public class StatsService {
         return mini + 1;
     }
 
-    public int amountMonthMin(int[] sales) {
-        int amountMonthMin = 0; // Кол-во месяцев, в которых продажи были ниже среднего
-        int averageSales = 0; // средняя сумма продаж в месяц
-        int sum = 0; // сумма всех продаж
+    public long amountMonthMin(long[] sales) {
+        long amountMonthMin = 0; // Кол-во месяцев, в которых продажи были ниже среднего
 
-        for (int sale : sales) {
-            sum += sale;
-            averageSales = sum / 12;
-        }
+        long sumSales = sumSales(sales); // сумма всех продаж
+        long averageSales = averageSales(sales); // средняя сумма продаж в месяц
+
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < averageSales) {
                 amountMonthMin++;
@@ -57,15 +51,12 @@ public class StatsService {
         return amountMonthMin;
     }
 
-    public int amountMonthMax(int[] sales) {
-        int amountMonthMax = 0; // Кол-во месяцев, в которых продажи были выше среднего
-        int averageSales = 0; // средняя сумма продаж в месяц
-        int sum = 0; // сумма всех продаж
+    public long amountMonthMax(long[] sales) {
+        long amountMonthMax = 0; // Кол-во месяцев, в которых продажи были выше среднего
 
-        for (int sale : sales) {
-            sum += sale;
-            averageSales = sum / 12;
-        }
+        long sumSales = sumSales(sales); // сумма всех продаж
+        long averageSales = averageSales(sales); // средняя сумма продаж в месяц
+
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > averageSales) {
                 amountMonthMax++;

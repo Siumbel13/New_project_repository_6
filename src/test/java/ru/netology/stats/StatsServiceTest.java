@@ -55,9 +55,9 @@ public class StatsServiceTest {
     public void shouldAmountMonthMin() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.amountMonthMin(sales);
-        int expected = 5;
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long actual = service.amountMonthMin(sales);
+        long expected = 5;
 
         Assertions.assertEquals(expected, actual);
     }
@@ -66,9 +66,9 @@ public class StatsServiceTest {
     public void shouldAmountMonthMax() {
         StatsService service = new StatsService();
 
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = service.amountMonthMin(sales);
-        int expected = 5;
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long actual = service.amountMonthMin(sales);
+        long expected = 5;
 
         Assertions.assertEquals(expected, actual);
     }
